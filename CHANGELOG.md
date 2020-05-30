@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.6](https://github.com/ctdlspace/ctdlui/compare/v0.0.5...v0.0.6) (2020-05-30)
+
+
+### Bug Fixes
+
+* export of the components for the correct suggestions in IDE ([102929d](https://github.com/ctdlspace/ctdlui/commit/102929d0c264cd75c98313f21291912edc673d23))
+
 ### [0.0.5](https://github.com/ctdlspace/ctdlui/compare/v0.0.4...v0.0.5) (2020-05-30)
 
 
