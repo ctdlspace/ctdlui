@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "replace": "replace 'ctdlspace.github.com' 'github.com' CHANGELOG.md",
-    "release": "npm build && standard-version && git push --follow-tags origin master",
+    "release": "npm build && standard-version && git push --follow-tags origin master && npm publish",
     "reset": "rm -rf dist",
     "dev": "nodemon --exec broccoli build",
     "build": "broccoli build",
