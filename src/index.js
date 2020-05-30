@@ -1,2 +1,2 @@
-export * from './Test/Test'
-export * from './Button/Button'
+export { Test } from './Test/Test'
+export { Button } from './Button/Button'
