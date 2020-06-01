@@ -23,7 +23,8 @@
  * @property    {boolean}    [required]
  */
 
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import './form.less'
 
 const FormDefaultInputType = props => {
 	return (
@@ -41,7 +42,7 @@ const FormDefaultButtonType = props => {
  * Form Settings
  * @type {{defaultInputType: (function(*): *), defaultButtonType: (function(*): *)}}
  */
-export const FormSettings = {
+export const LuiFormSettings = {
 	defaultInputType: FormDefaultInputType,
 	defaultButtonType: FormDefaultButtonType,
 }
@@ -56,9 +57,7 @@ export const FormSettings = {
  * @param {function} props.onSubmit
  * @returns {*}
  */
-export const Form = props => {
-
-	const { useState, useEffect } = getReact()
+export const LuiForm = props => {
 
 	const {
 		onSubmit,
@@ -68,13 +67,13 @@ export const Form = props => {
 	} = props
 
 	const defaultButtons = [{
-		type: FormSettings.defaultButtonType,
+		type: LuiFormSettings.defaultButtonType,
 		text: 'Submit',
 	}]
 
 	const defaultFields = [{
 		name: 'title',
-		type: FormSettings.defaultInputType,
+		type: LuiFormSettings.defaultInputType,
 	}]
 
 	const initialValues = (fields || defaultFields).reduce(
@@ -121,12 +120,12 @@ export const Form = props => {
 	)
 
 	return (
-		<form onSubmit={doOnSubmit} className={'form'}>
+		<form onSubmit={doOnSubmit} className="luiForm">
 			{
 				(fields || defaultFields).map((field, key) => {
 
 					field.type || (
-						field.type = FormSettings.defaultInputType
+						field.type = LuiFormSettings.defaultInputType
 					)
 
 					const typeProps = {
@@ -148,9 +147,9 @@ export const Form = props => {
 					typeProps.required = typeProps.required !== false
 
 					return (
-						<div className="form_field" key={key}>
-							<div className="form_field_title">{typeProps.label}</div>
-							<div className="form_field_input">
+						<div className="luiForm_field" key={key}>
+							<div className="luiForm_field_title">{typeProps.label}</div>
+							<div className="luiForm_field_input">
 								<field.type
 									{...getFieldProps(typeProps.name)}
 									{...typeProps}
@@ -160,13 +159,13 @@ export const Form = props => {
 					)
 				})
 			}
-			<div className="form_buttons">
+			<div className="luiForm_buttons">
 				{
 					(buttons || defaultButtons).map(
 						(button, key) => {
-							const Com = button.type || FormSettings.defaultButtonType
+							const Com = button.type || LuiFormSettings.defaultButtonType
 							return (
-								<Com className="form_button"
+								<Com className="luiForm_button"
 										 type={button.type}
 										 key={key}>{button.text}</Com>
 							)
