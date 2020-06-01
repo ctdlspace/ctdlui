@@ -1,22 +1,20 @@
 {
   "name": "ctdlui",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "General Purpose React Components",
   "main": "index.js",
   "files": [
     "dist"
   ],
   "scripts": {
-	"release:replace": "replace 'ctdlspace.github.com' 'github.com' CHANGELOG.md",
-	"release:build": "broccoli build",
+    "release:replace": "replace 'ctdlspace.github.com' 'github.com' CHANGELOG.md",
+    "release:build": "",
     "release": "npm build && standard-version && git push --follow-tags origin master && npm publish",
-
     "dev:reset": "rm -rf dist",
     "dev:prepare": "touch index.css && touch react.js",
     "dev:clean": "rm -rf components && rm index.css && rm react.js",
     "dev:move": "mv dist/components components && mv dist/react.js react.js && mv dist/index.css index.css && rm -rf dist",
-	"dev": "echo \"just import as git submodule\" && exit 1",
-
+    "dev": "echo \"just import as git submodule\" && exit 1",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Rus Inozemtsev",
