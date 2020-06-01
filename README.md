@@ -1,4 +1,4 @@
-# CTDL-UI
+# CTDL-UI or L-UI
 
 Submodule with React Components
 
