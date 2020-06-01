@@ -6,11 +6,18 @@
  *  skinny, auto, smallest, smaller, small, normal, big, bigger, biggest
  *
  *  Purpose:
- *  secondary, normal, primary
+ *  secondary, normal, primary, urgent
  *
  *  Inner Space:
  *  vacuum, normal, airy
+ *
+ * Colors:
+ * Please spend a little time to give colors correct names based on
+ * http://chir.ag/projects/name-that-color/#CCCCCC
+ *
  */
+
+@import "./colors.less";
 
 :root {
   --lui-size: 16px;
@@ -20,4 +27,8 @@
   --lui-font-biggest: bold normal var(--lui-size-biggest)/125% sans-serif;
 
   --lui-padding: var(--lui-size);
+
+  --lui-foreground: var(--lui-color-codGray);
+  --lui-background: var(--lui-color-whildSand);
+  --lui-background-dimmed: var(--lui-color-silver);
 }
