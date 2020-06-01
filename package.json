@@ -7,13 +7,10 @@
     "dist"
   ],
   "scripts": {
-    "release:replace": "replace 'ctdlspace.github.com' 'github.com' CHANGELOG.md",
+    "release:replace": "replace 'ctdlui.github.com' 'github.com' CHANGELOG.md",
     "release:build": "",
     "release": "npm build && standard-version && git push --follow-tags origin master",
     "dev:reset": "rm -rf dist",
-    "dev:prepare": "touch index.css && touch react.js",
-    "dev:clean": "rm -rf components && rm index.css && rm react.js",
-    "dev:move": "mv dist/components components && mv dist/react.js react.js && mv dist/index.css index.css && rm -rf dist",
     "dev": "echo \"just import as git submodule\" && exit 1",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
