@@ -9,7 +9,7 @@
   "scripts": {
     "release:replace": "replace 'ctdlui.github.com' 'github.com' CHANGELOG.md",
     "release:build": "",
-    "release": "git checkout master && git pull && npm release:build && standard-version && git push --follow-tags origin master",
+    "dev:release": "git checkout master && git pull && npm run release:build && standard-version && git push --follow-tags origin master",
     "dev:reset": "rm -rf dist",
     "dev": "parcel public/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
