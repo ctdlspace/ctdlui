@@ -1,6 +1,6 @@
 {
   "name": "ctdlui",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "General Purpose React Components",
   "main": "index.js",
   "scripts": {
@@ -15,7 +15,9 @@
     "url": "git+git@github.com:ctdlspace/ctdlui.git"
   },
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "mime": "^2.4.6"
+  },
   "devDependencies": {
     "less": "^3.11.2",
     "parcel-bundler": "^1.12.4",

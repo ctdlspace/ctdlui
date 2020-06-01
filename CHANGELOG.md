@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.15](https://github.com/ctdlspace/ctdlui/compare/v0.0.14...v0.0.15) (2020-06-01)
+
+
+### Features
+
+* LuiContentTitle Component ([370cd4b](https://github.com/ctdlspace/ctdlui/commit/370cd4b1df52d97a3bab3bd53c77abed01b86d93))
+* LuiInputFile Component ([78e5b31](https://github.com/ctdlspace/ctdlui/commit/78e5b31228547a195ef2085afd3a2849d0a82ed5))
+* LuiInputMultiSelect ([2e75852](https://github.com/ctdlspace/ctdlui/commit/2e758525e50914d4839afb32368474a3549aeb68))
+* LuiInputSelect ([e203c80](https://github.com/ctdlspace/ctdlui/commit/e203c800845f90139f7e2797115935bc97de81a5))
+* LuiInputSelectOrText ([3e505c2](https://github.com/ctdlspace/ctdlui/commit/3e505c2697b775ff7ddc6a3de401868a931b1f40))
+* LuiInputText ([e0ef190](https://github.com/ctdlspace/ctdlui/commit/e0ef1909280160531090fe8d81f9409c7e255c05))
+* LuiSectionTitle Component ([a7d9f02](https://github.com/ctdlspace/ctdlui/commit/a7d9f029c6d2e26aca5f3d9f41c8075f22fc2f91))
+* LuiThumbnail Component ([2c0f681](https://github.com/ctdlspace/ctdlui/commit/2c0f681cade717c140409bc3aec284455b393e06))
+
 ### [0.0.14](https://github.com/ctdlspace/ctdlui/compare/v0.0.13...v0.0.14) (2020-06-01)
 
 
