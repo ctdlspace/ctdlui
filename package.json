@@ -1,6 +1,6 @@
 {
   "name": "ctdlui",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "General Purpose React Components",
   "main": "index.js",
   "scripts": {
