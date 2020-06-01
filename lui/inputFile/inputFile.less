@@ -1,0 +1,39 @@
+.luiInputFile {
+  display: flex;
+  align-items: center;
+}
+
+.luiInputFile_preview {
+  margin-right: 1rem;
+  overflow: hidden;
+}
+
+.luiInputFile_link {
+  padding: 0;
+  font-size: 0.9rem;
+  line-height: 1;
+  color: #331C20;
+  border-radius: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.luiInputFile_spinner {
+  display: inline-block;
+  overflow: hidden;
+  animation-duration: 1s;
+  animation-name: aa;
+  animation-iteration-count: infinite;
+  border-bottom: 1px dashed #333;
+}
+
+//todo: rename this, add animation naming rules
+@keyframes aa {
+  from {
+    width: 0rem;
+  }
+  to {
+    width: 1rem;
+  }
+}
