@@ -3,9 +3,6 @@
   "version": "0.0.12",
   "description": "General Purpose React Components",
   "main": "index.js",
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "dev:replace": "replace 'ctdlui.github.com' 'github.com' CHANGELOG.md",
     "dev:release": "git checkout master && git pull && npm run release:build && standard-version && git push --follow-tags origin master",
