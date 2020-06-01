@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.10](https://github.com/ctdlspace/ctdlui/compare/v0.0.9...v0.0.10) (2020-06-01)
+
+
+### Features
+
+* add dev server based on parcel and remove unnecessary broccoli files ([8584c17](https://github.com/ctdlspace/ctdlui/commit/8584c174e4a187e862d4c0ab21e0de0308c309ca))
+* dev server usage example ([f3d90ac](https://github.com/ctdlspace/ctdlui/commit/f3d90acda414e1cc66b20265cf88da54e9516f73))
+
+
+### Bug Fixes
+
+* release script ([604c63d](https://github.com/ctdlspace/ctdlui/commit/604c63dc7be4407d3bf0926d9fd3a33d204caf85))
+* release script ([13d50a1](https://github.com/ctdlspace/ctdlui/commit/13d50a1f5e99e5fbff4c7533cce71354dbe30986))
+
 ### [0.0.9](https://github.com/ctdlspace/ctdlui/compare/v0.0.8...v0.0.9) (2020-06-01)
 
 ### [0.0.8](https://github.com/ctdlspace/ctdlui/compare/v0.0.7...v0.0.8) (2020-06-01)
