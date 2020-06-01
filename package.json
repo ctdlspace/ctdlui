@@ -2,13 +2,21 @@
   "name": "ctdlui",
   "version": "0.0.6",
   "description": "General Purpose React Components",
-  "main": "dist/index.js",
+  "main": "index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "replace": "replace 'ctdlspace.github.com' 'github.com' CHANGELOG.md",
+	"release:replace": "replace 'ctdlspace.github.com' 'github.com' CHANGELOG.md",
+	"release:build": "broccoli build",
     "release": "npm build && standard-version && git push --follow-tags origin master && npm publish",
-    "reset": "rm -rf dist",
-    "dev": "nodemon --exec broccoli build",
-    "build": "broccoli build",
+
+    "dev:reset": "rm -rf dist",
+    "dev:prepare": "touch index.css && touch react.js",
+    "dev:clean": "rm -rf components && rm index.css && rm react.js",
+    "dev:move": "mv dist/components components && mv dist/react.js react.js && mv dist/index.css index.css && rm -rf dist",
+	"dev": "echo \"just import as git submodule\" && exit 1",
+
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Rus Inozemtsev",
@@ -17,13 +25,8 @@
     "url": "git+git@github.com:ctdlspace/ctdlui.git"
   },
   "license": "MIT",
-  "dependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "replace": "^1.2.0",
-    "standard-version": "^8.0.0",
     "@babel/cli": "^7.10.1",
     "@babel/core": "^7.10.1",
     "@babel/preset-env": "^7.10.1",
@@ -34,11 +37,13 @@
     "broccoli-concat": "^4.2.4",
     "broccoli-funnel": "^3.0.3",
     "broccoli-merge-trees": "^4.2.0",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "replace": "^1.2.0",
+    "standard-version": "^8.0.0"
   },
   "standard-version": {
     "scripts": {
-      "postchangelog": "npm run replace"
+      "postchangelog": "npm run release:replace"
     }
   }
 }

@@ -1,4 +1,7 @@
-node_modules/
+# generic exclusions
 .idea/
 .DS_Store
+
+# node exclusions
+node_modules/
 package-lock.json

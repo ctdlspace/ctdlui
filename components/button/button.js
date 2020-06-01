@@ -1,5 +1,3 @@
-import React from 'react'
-
 /** Button
  *  @param props
  *  @param props.children

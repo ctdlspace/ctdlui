@@ -1,0 +1,17 @@
+.form {
+  margin: -.5rem 0;
+}
+
+.form_field {
+  display: block;
+  padding: 0.5rem 0;
+}
+
+.form_field_title {
+  padding: 0.5rem 0;
+  font-weight: bold;
+}
+
+.form_buttons {
+  padding: .5rem 0;
+}
