@@ -23,7 +23,7 @@
  * @property    {boolean}    [required]
  */
 
-import { getReact } from '../../react'
+import React from 'react'
 
 const FormDefaultInputType = props => {
 	return (
@@ -49,7 +49,7 @@ export const FormSettings = {
 /**
  * Form
  * @param {object} props
- * @param {{[string]: any}} props.values
+ * @param {{[string]: *}} props.values
  * @param {[FormField]} props.fields
  * @param {[FormButton]} props.buttons
  * @param {boolean} props.debug
@@ -89,7 +89,7 @@ export const Form = props => {
 		setFormValues,
 	] = useState(initialValues)
 
-	const getFieldProps = name => {
+	const getFieldProps = () => {
 		return {
 			onChange(e) {
 				const name = e.target.name
