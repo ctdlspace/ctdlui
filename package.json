@@ -7,11 +7,9 @@
     "dist"
   ],
   "scripts": {
-    "release:replace": "replace 'ctdlui.github.com' 'github.com' CHANGELOG.md",
-    "release:build": "",
+    "dev:replace": "replace 'ctdlui.github.com' 'github.com' CHANGELOG.md",
     "dev:release": "git checkout master && git pull && npm run release:build && standard-version && git push --follow-tags origin master",
-    "dev:reset": "rm -rf dist",
-    "dev": "parcel public/*.html",
+    "dev": "parcel public/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Rus Inozemtsev",
@@ -31,7 +29,7 @@
   },
   "standard-version": {
     "scripts": {
-      "postchangelog": "npm run release:replace"
+      "postchangelog": "npm run dev:replace"
     }
   }
 }
