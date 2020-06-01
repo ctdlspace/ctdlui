@@ -1,0 +1,45 @@
+.luiGrid {
+  --grid-gutter: .5rem;
+  ---grid-gutter-reverse: calc(var(--grid-gutter) * -1);
+
+  display: flex;
+  margin: var(---grid-gutter-reverse);
+  padding: 0;
+  flex-wrap: wrap;
+
+  &__airy {
+    --grid-gutter: 1rem;
+  }
+  &__vacuum {
+    --grid-gutter: 0;
+  }
+}
+.luiGrid_item {
+  padding: var(--grid-gutter);
+  width: 0;
+  flex: 1;
+  &__auto {
+	width: auto;
+	flex: 1;
+  }
+  &__skinny {
+	width: auto;
+	flex: 0 0 auto;
+  }
+  &__quarter {
+	width: auto;
+	flex: 0 0 25%;
+  }
+  &__third {
+	width: auto;
+	flex: 0 0 33.3%;
+  }
+  &__half {
+	width: auto;
+	flex: 0 0 50%;
+  }
+  &__sixEighths {
+	width: auto;
+	flex: 0 0 62.5%;
+  }
+}
