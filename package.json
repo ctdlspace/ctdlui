@@ -11,7 +11,7 @@
     "release:build": "",
     "dev:release": "git checkout master && git pull && npm run release:build && standard-version && git push --follow-tags origin master",
     "dev:reset": "rm -rf dist",
-    "dev": "parcel public/index.html",
+    "dev": "parcel public/*.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Rus Inozemtsev",
