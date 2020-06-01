@@ -1,6 +1,6 @@
 {
   "name": "ctdlui",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "General Purpose React Components",
   "main": "index.js",
   "files": [
@@ -9,7 +9,7 @@
   "scripts": {
     "release:replace": "replace 'ctdlspace.github.com' 'github.com' CHANGELOG.md",
     "release:build": "",
-    "release": "npm build && standard-version && git push --follow-tags origin master && npm publish",
+    "release": "npm build && standard-version && git push --follow-tags origin master",
     "dev:reset": "rm -rf dist",
     "dev:prepare": "touch index.css && touch react.js",
     "dev:clean": "rm -rf components && rm index.css && rm react.js",
