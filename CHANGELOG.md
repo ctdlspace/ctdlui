@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.20](https://github.com/ctdlspace/ctdlui/compare/v0.0.19...v0.0.20) (2020-06-02)
+
+
+### Bug Fixes
+
+* **LuiInputMultiSelect:** correct set value ([fc394c9](https://github.com/ctdlspace/ctdlui/commit/fc394c9848772af2d0c2e3301ed85ca5abebb795))
+* wrong onchange event trigger ([7fa8e0f](https://github.com/ctdlspace/ctdlui/commit/7fa8e0f2ecef2e32263839e387cff2b95e716f98))
+
 ### [0.0.19](https://github.com/ctdlspace/ctdlui/compare/v0.0.18...v0.0.19) (2020-06-02)
 
 
