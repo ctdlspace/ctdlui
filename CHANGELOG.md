@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.18](https://github.com/ctdlspace/ctdlui/compare/v0.0.17...v0.0.18) (2020-06-02)
+
+
+### Features
+
+* LuiInputTextarea ([0133711](https://github.com/ctdlspace/ctdlui/commit/01337117c76e78ece66e14d6807e9271dd42e5d4))
+
+
+### Bug Fixes
+
+* component sets value incorrect ([9f8371e](https://github.com/ctdlspace/ctdlui/commit/9f8371e36bb05186d122463792eedb188e896618))
+
 ### [0.0.17](https://github.com/ctdlspace/ctdlui/compare/v0.0.16...v0.0.17) (2020-06-01)
 
 ### [0.0.16](https://github.com/ctdlspace/ctdlui/compare/v0.0.15...v0.0.16) (2020-06-01)
