@@ -14,7 +14,6 @@
  * @property    {object}     [options]
  */
 
-
 /**
  * @typedef     {object}     FormButton
  * @property    {string}     name
@@ -25,6 +24,8 @@
 
 import React, { useState, useEffect } from 'react'
 import './form.less'
+import { LuiButton } from '../button/button'
+import { LuiInputText } from '../inputText/inputText'
 
 const FormDefaultInputType = props => {
 	return (
@@ -43,8 +44,8 @@ const FormDefaultButtonType = props => {
  * @type {{defaultInputType: (function(*): *), defaultButtonType: (function(*): *)}}
  */
 export const LuiFormSettings = {
-	defaultInputType: FormDefaultInputType,
-	defaultButtonType: FormDefaultButtonType,
+	defaultInputType: LuiInputText,
+	defaultButtonType: LuiButton,
 }
 
 /**
