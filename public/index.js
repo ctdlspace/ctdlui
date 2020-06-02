@@ -23,59 +23,70 @@ const selectOptions = [
 
 const App = () => (
 	<LuiApp>
-		<LuiPageTitle>{name} — CTDL Design System</LuiPageTitle>
+		<LuiContent>
+			<LuiPageTitle>{name} — CTDL Design System</LuiPageTitle>
+		</LuiContent>
 		<LuiSection>
-			<LuiSectionTitle>Forms And Inputs</LuiSectionTitle>
-			<LuiGrid>
-				<LuiGrid_item>
-					<LuiContentTitle>Form</LuiContentTitle>
-					<LuiForm fields={[
-						{ name: 'field1', label: 'Field 1' },
-						{ name: 'field2', label: 'Field 2', type: LuiInputFile, options: { server: 'https://fs.ctdl.space' } },
-					]}/>
-				</LuiGrid_item>
-				<LuiGrid_item>
-					<LuiContentTitle>Select</LuiContentTitle>
-					<LuiInputSelect
-						name="select1"
-						options={selectOptions}/>
-				</LuiGrid_item>
-				<LuiGrid_item>
-					<LuiContentTitle>MultiSelect</LuiContentTitle>
-					<LuiInputMultiSelect
-						name="select2"
-						options={selectOptions}/>
-				</LuiGrid_item>
-				<LuiGrid_item>
-					<LuiContentTitle>SelectOrText</LuiContentTitle>
-					<LuiInputSelectOrText
-						name="select3"
-						value=""
-						options={[...selectOptions, { _id: '', title: 'Other' }]}/>
-				</LuiGrid_item>
-			</LuiGrid>
+			<LuiContent>
+				<LuiSectionTitle>Forms And Inputs</LuiSectionTitle>
+				<LuiGrid>
+					<LuiGrid_item>
+						<LuiContentTitle>Form</LuiContentTitle>
+						<LuiForm fields={[
+							{ name: 'field1', label: 'Field 1' },
+							{ name: 'field2', label: 'Field 2', type: LuiInputFile, options: { server: 'https://fs.ctdl.space' } },
+						]}/>
+					</LuiGrid_item>
+					<LuiGrid_item>
+						<LuiContentTitle>Select</LuiContentTitle>
+						<LuiInputSelect
+							name="select1"
+							options={selectOptions}/>
+					</LuiGrid_item>
+					<LuiGrid_item>
+						<LuiContentTitle>MultiSelect</LuiContentTitle>
+						<LuiInputMultiSelect
+							name="select2"
+							value={['1']}
+							options={selectOptions}/>
+					</LuiGrid_item>
+					<LuiGrid_item>
+						<LuiContentTitle>SelectOrText</LuiContentTitle>
+						<LuiInputSelectOrText
+							name="select3"
+							value=""
+							options={[...selectOptions, { _id: '', title: 'Other' }]}/>
+					</LuiGrid_item>
+				</LuiGrid>
+			</LuiContent>
 		</LuiSection>
 		<LuiSection>
-			<LuiSectionTitle>Notifications</LuiSectionTitle>
-			<LuiNotification>This is Notification</LuiNotification>
+			<LuiContent>
+				<LuiSectionTitle>Notifications</LuiSectionTitle>
+				<LuiNotification>This is Notification</LuiNotification>
+			</LuiContent>
 		</LuiSection>
 		<LuiSection>
-			<LuiSectionTitle>Grid</LuiSectionTitle>
-			<LuiGrid>
-				<LuiGrid_item>This</LuiGrid_item>
-				<LuiGrid_item>Is</LuiGrid_item>
-				<LuiGrid_item>Grid</LuiGrid_item>
-				<LuiGrid_item>Baby!</LuiGrid_item>
-			</LuiGrid>
+			<LuiContent>
+				<LuiSectionTitle>Grid</LuiSectionTitle>
+				<LuiGrid>
+					<LuiGrid_item>This</LuiGrid_item>
+					<LuiGrid_item>Is</LuiGrid_item>
+					<LuiGrid_item>Grid</LuiGrid_item>
+					<LuiGrid_item>Baby!</LuiGrid_item>
+				</LuiGrid>
+			</LuiContent>
 		</LuiSection>
 		<LuiSection>
-			<LuiSectionTitle>Misc</LuiSectionTitle>
-			<LuiGrid>
-				<LuiGrid_item>1</LuiGrid_item>
-				<LuiGrid_item>2</LuiGrid_item>
-				<LuiGrid_item>3</LuiGrid_item>
-				<LuiGrid_item>4</LuiGrid_item>
-			</LuiGrid>
+			<LuiContent>
+				<LuiSectionTitle>Misc</LuiSectionTitle>
+				<LuiGrid>
+					<LuiGrid_item>1</LuiGrid_item>
+					<LuiGrid_item>2</LuiGrid_item>
+					<LuiGrid_item>3</LuiGrid_item>
+					<LuiGrid_item>4</LuiGrid_item>
+				</LuiGrid>
+			</LuiContent>
 		</LuiSection>
 	</LuiApp>
 )
