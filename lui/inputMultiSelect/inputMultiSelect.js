@@ -13,7 +13,7 @@ import { luiMapCom } from '../../helpers'
  */
 export function LuiInputMultiSelect(props) {
 	const { options = [], value = [] } = props
-	const [innerValue, setInnerValue] = useState(value)
+	const [innerValue, setInnerValue] = useState(Array.isArray(value) ? value : [])
 	const onChange = e => {
 		const value = [...e.target.options].reduce(
 			(memo, option) => {
@@ -24,7 +24,7 @@ export function LuiInputMultiSelect(props) {
 			},
 			[],
 		)
-		props.onChange?.(value)
+		props.onChange?.({ target: { value } })
 		setInnerValue(value)
 	}
 	return (
