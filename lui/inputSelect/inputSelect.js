@@ -1,6 +1,6 @@
 import React from 'react'
 import './inputSelect.less'
-import { mapCom } from '../../helpers'
+import { luiMapCom } from '../../helpers'
 
 /** LuiFormSelect
  *  @param props
@@ -19,7 +19,7 @@ export function LuiInputSelect(props) {
 	}
 	return (
 		<select className="luiInputSelect" value={props.value} onChange={props.onChange}>
-			{mapCom(options, Option)}
+			{luiMapCom(options, Option)}
 		</select>
 	)
 }
