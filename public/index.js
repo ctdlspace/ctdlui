@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { render } from 'react-dom'
 import { LuiApp } from '../lui/app'
 import { LuiContent } from '../lui/content'
@@ -32,10 +33,14 @@ const App = () => (
 				<LuiGrid>
 					<LuiGrid_item>
 						<LuiContentTitle>Form</LuiContentTitle>
-						<LuiForm fields={[
-							{ name: 'field1', label: 'Field 1' },
-							{ name: 'field2', label: 'Field 2', type: LuiInputFile, options: { server: 'https://fs.ctdl.space' } },
-						]}/>
+						<LuiForm
+							fields={[
+								{ name: 'field1', label: 'Field 1' },
+								{
+									name: 'field2', label: 'Field 2',
+									type: LuiInputFile, options: { server: 'https://fs.ctdl.space' },
+								},
+							]}/>
 					</LuiGrid_item>
 					<LuiGrid_item>
 						<LuiContentTitle>Select</LuiContentTitle>
