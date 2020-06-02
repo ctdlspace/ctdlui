@@ -5,6 +5,9 @@ import { LuiContent } from '../lui/content'
 import { LuiContentTitle } from '../lui/contentTitle'
 import { LuiForm } from '../lui/form'
 import { LuiInputFile } from '../lui/inputFile'
+import { LuiInputMultiSelect } from '../lui/inputMultiSelect'
+import { LuiInputSelect } from '../lui/inputSelect'
+import { LuiInputSelectOrText } from '../lui/inputSelectOrText/inputSelectOrText'
 import { LuiNotification } from '../lui/notification'
 import { LuiPageTitle } from '../lui/pageTitle'
 import { LuiGrid, LuiGrid_item } from '../lui/grid'
@@ -12,6 +15,11 @@ import { LuiSection } from '../lui/section'
 import { LuiSectionTitle } from '../lui/sectionTitle'
 
 const name = 'L-UI'
+
+const selectOptions = [
+	{ _id: '1', 'title': 'Option 1' },
+	{ _id: '2', 'title': 'Option 2' },
+]
 
 const App = () => (
 	<LuiApp>
@@ -22,18 +30,33 @@ const App = () => (
 				<LuiGrid_item>
 					<LuiContentTitle>Form</LuiContentTitle>
 					<LuiForm fields={[
-						{ name: 'field1', label: 'Field 1'},
+						{ name: 'field1', label: 'Field 1' },
 						{ name: 'field2', label: 'Field 2', type: LuiInputFile, options: { server: 'https://fs.ctdl.space' } },
 					]}/>
 				</LuiGrid_item>
 				<LuiGrid_item>
-
+					<LuiContentTitle>Select</LuiContentTitle>
+					<LuiInputSelect
+						name="select1"
+						options={selectOptions}/>
 				</LuiGrid_item>
-				<LuiGrid_item></LuiGrid_item>
-				<LuiGrid_item></LuiGrid_item>
+				<LuiGrid_item>
+					<LuiContentTitle>MultiSelect</LuiContentTitle>
+					<LuiInputMultiSelect
+						name="select2"
+						options={selectOptions}/>
+				</LuiGrid_item>
+				<LuiGrid_item>
+					<LuiContentTitle>SelectOrText</LuiContentTitle>
+					<LuiInputSelectOrText
+						name="select3"
+						value=""
+						options={[...selectOptions, { _id: '', title: 'Other' }]}/>
+				</LuiGrid_item>
 			</LuiGrid>
 		</LuiSection>
 		<LuiSection>
+			<LuiSectionTitle>Notifications</LuiSectionTitle>
 			<LuiNotification>This is Notification</LuiNotification>
 		</LuiSection>
 		<LuiSection>
@@ -58,5 +81,5 @@ const App = () => (
 )
 render(
 	<App/>,
-	document.getElementById('app')
+	document.getElementById('app'),
 )
