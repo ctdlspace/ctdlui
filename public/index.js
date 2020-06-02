@@ -52,7 +52,6 @@ const App = () => (
 						<LuiContentTitle>MultiSelect</LuiContentTitle>
 						<LuiInputMultiSelect
 							name="select2"
-							value={['1']}
 							options={selectOptions}/>
 					</LuiGrid_item>
 					<LuiGrid_item>
