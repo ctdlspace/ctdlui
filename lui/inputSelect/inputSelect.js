@@ -2,7 +2,15 @@ import React from 'react'
 import './inputSelect.less'
 import { luiMapCom } from '../../helpers'
 
-/** LuiFormSelect
+/** LuiInputSelect
+ *  @example <LuiInputSelect
+ *  					name="select"
+ *  					options={[
+ *  						{_id: '1', title: 'Option 1'},
+ *  						{_id: '2', title: 'Option 2'},
+ *  					]}
+ *  					onChange={console.log}
+ *  					/>
  *  @param props
  *  @param props.value
  *  @param props.name
