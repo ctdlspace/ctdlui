@@ -9,10 +9,11 @@
 import React from 'react'
 import './content.less'
 
-/** Content
- *  @param props
- *  @param props.children
- *  @return {*}
+/**
+ * Content
+ * @param props
+ * @param props.children
+ * @return {*}
  */
 export function LuiContent(props) {
 	return (
