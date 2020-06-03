@@ -36,7 +36,9 @@ export function LuiInputSelectOrText(props) {
 				<div>
 					<LuiInputText
 						name={name}
-						value={value}/>
+						value={value}
+						onChange={onChange}
+					/>
 				</div>
 			)}
 		</div>
