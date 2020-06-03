@@ -6,7 +6,14 @@
  */
 
 /**
- * @typedef     {object}     FormField
+ * @typedef {object} LuiFormEvent
+ * @property {object} target
+ * @property {string} target.name
+ * @property {*} target.value
+ */
+
+/**
+ * @typedef     {object}     LuiFormInput
  * @property    {string}     name
  * @property    {function}   [type] react component for type
  * @property    {string}     [label]
@@ -15,7 +22,7 @@
  */
 
 /**
- * @typedef     {object}     FormButton
+ * @typedef     {object}     LuiButton
  * @property    {string}     name
  * @property    {function}   [type] button type. default: submit
  * @property    {string}     [text]
@@ -26,18 +33,7 @@ import React, { useState, useEffect } from 'react'
 import './form.less'
 import { LuiButton } from '../button/button'
 import { LuiInputText } from '../inputText/inputText'
-
-const FormDefaultInputType = props => {
-	return (
-		<input {...props} type={'text'}/>
-	)
-}
-
-const FormDefaultButtonType = props => {
-	return (
-		<button {...props} type={'submit'}>{props.children}</button>
-	)
-}
+import { luiEvent } from '../../helpers'
 
 /**
  * Form Settings
@@ -49,13 +45,15 @@ export const LuiFormSettings = {
 }
 
 /**
- * Form
- * @param {object} props
- * @param {{[string]: *}} props.values
- * @param {[FormField]} props.fields
- * @param {[FormButton]} props.buttons
- * @param {boolean} props.debug
- * @param {function} props.onSubmit
+ * Create form based on fields
+ *
+ * @typedef {object} LuiFormProps
+ * @property {{[string]: *}} values
+ * @property {[LuiFormInput]} fields
+ * @property {[LuiButton]} buttons
+ * @property {function} onSubmit
+ *
+ * @param {LuiFormProps} props
  * @returns {*}
  */
 export const LuiForm = props => {
@@ -94,6 +92,11 @@ export const LuiForm = props => {
 			onChange(e) {
 				const name = e.target.name
 				const value = e.target.value
+				if (!name) {
+					console.error(e.target)
+					throw Error('name not set')
+				}
+				console.debug('onChange', {name, value})
 				setFormValues({
 						...formValues,
 						[name]: value,
@@ -105,12 +108,14 @@ export const LuiForm = props => {
 
 	const doOnSubmit = e => {
 		e.preventDefault()
-		onSubmit && props.onSubmit({
-			sourceEvent: e,
-			target: {
-				value: formValues,
-			},
-		})
+		console.debug('onSubmit', formValues)
+		luiEvent(props, 'onSubmit', formValues)
+		// onSubmit && props.onSubmit({
+		// 	sourceEvent: e,
+		// 	target: {
+		// 		value: formValues,
+		// 	},
+		// })
 	}
 
 	useEffect(
@@ -148,7 +153,7 @@ export const LuiForm = props => {
 					typeProps.required = typeProps.required !== false
 
 					return (
-						<div className="luiForm_field" key={key}>
+						<div className="luiFormInput" key={key}>
 							<div className="luiForm_field_title">{typeProps.label}</div>
 							<div className="luiForm_field_input">
 								<field.type
