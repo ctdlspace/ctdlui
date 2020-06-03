@@ -4,18 +4,18 @@
 }
 
 .luiInputFile_preview {
-  margin-right: 1rem;
+	flex: 0 0 auto;
+  margin-right: var(--lui-size);
   overflow: hidden;
 }
 
 .luiInputFile_link {
   padding: 0;
-  font-size: 0.9rem;
   line-height: 1;
-  color: #331C20;
-  border-radius: 0;
   border: 0;
-  background: none;
+	font: inherit;
+	color: inherit;
+  background: transparent;
   cursor: pointer;
 }
 
@@ -23,17 +23,16 @@
   display: inline-block;
   overflow: hidden;
   animation-duration: 1s;
-  animation-name: aa;
+  animation-name: luiInputFile_spinner_animation;
   animation-iteration-count: infinite;
-  border-bottom: 1px dashed #333;
+  border-bottom: 1px dashed var(--lui-foreground);
 }
 
-//todo: rename this, add animation naming rules
-@keyframes aa {
+@keyframes luiInputFile_spinner_animation {
   from {
-    width: 0rem;
+    width: 0;
   }
   to {
-    width: 1rem;
+    width: var(--lui-size);
   }
 }
