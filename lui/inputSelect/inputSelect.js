@@ -1,9 +1,10 @@
 import React from 'react'
-import './inputSelect.less'
 import { luiMapCom } from '../../helpers'
+import './inputSelect.less'
 
-/** LuiInputSelect
- *  @example <LuiInputSelect
+/**
+ * LuiInputSelect
+ * @example <LuiInputSelect
  *  					name="select"
  *  					options={[
  *  						{_id: '1', title: 'Option 1'},
@@ -11,12 +12,13 @@ import { luiMapCom } from '../../helpers'
  *  					]}
  *  					onChange={console.log}
  *  					/>
- *  @param props
- *  @param props.value
- *  @param props.name
- *  @param props.options
- *  @param [props.onChange]
- *  @return {*}
+ * @param props
+ * @param props.value
+ * @param props.name
+ * @param props.options
+ * @param [props.onChange]
+ * @return {*}
+ *
  */
 export function LuiInputSelect(props) {
 	const { options = [] } = props
@@ -26,7 +28,11 @@ export function LuiInputSelect(props) {
 		)
 	}
 	return (
-		<select className="luiInputSelect" value={props.value} onChange={props.onChange}>
+		<select
+			className="luiInputSelect"
+			name={props.value}
+			value={props.value}
+			onChange={props.onChange}>
 			{luiMapCom(options, Option)}
 		</select>
 	)
