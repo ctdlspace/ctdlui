@@ -1,19 +1,22 @@
 import React, { useState } from 'react'
 
-import './inputMultiSelect.less'
 import { luiMapCom } from '../../helpers'
+import './inputMultiSelect.less'
 
-/** Select multiple values accept and return [string]
- *  @param {object} props
- *  @param {string} props.name
- *  @param {[]} props.value
- *  @param {[]} props.options
- *  @param {function} [props.onChange]
- *  @return {*}
+/**
+ * Select multiple values accept and return [string]
+ * @param {object} props
+ * @param {string} props.name
+ * @param {[]} props.value
+ * @param {[]} props.options
+ * @param {function} [props.onChange]
+ * @return {*}
  */
 export function LuiInputMultiSelect(props) {
 	const { options = [], value = [] } = props
-	const [innerValue, setInnerValue] = useState(Array.isArray(value) ? value : [])
+	const [innerValue, setInnerValue] = useState(
+		Array.isArray(value) ? value : []
+	)
 	const onChange = e => {
 		const value = [...e.target.options].reduce(
 			(memo, option) => {
@@ -29,6 +32,7 @@ export function LuiInputMultiSelect(props) {
 	}
 	return (
 		<select
+			name={props.name}
 			value={innerValue}
 			className="luiInputMultiSelect"
 			multiple={true}
