@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
-import { luiMapCom } from '../../helpers'
+import { luiMapCom, luiFireChange, luiObjAreEq } from '../../helpers'
 import './inputMultiSelect.less'
 
 /**
@@ -27,14 +27,21 @@ export function LuiInputMultiSelect(props) {
 			},
 			[],
 		)
-		props.onChange?.({ target: { value } })
 		setInnerValue(value)
+		luiFireChange(props, value)
 	}
+	// useEffect(() => {
+	// 	console.log('useEffect')
+	// 	if (!luiObjAreEq(innerValue, props.value)) {
+	// 		console.log('luiFireChange', innerValue, props.value)
+	// 		//luiFireChange(props, value)
+	// 	}
+	// })
 	return (
 		<select
+			className="luiInputMultiSelect"
 			name={props.name}
 			value={innerValue}
-			className="luiInputMultiSelect"
 			multiple={true}
 			onChange={onChange}>
 			{
