@@ -30,7 +30,7 @@ export function LuiInputSelect(props) {
 	return (
 		<select
 			className="luiInputSelect"
-			name={props.value}
+			name={props.name}
 			value={props.value}
 			onChange={props.onChange}>
 			{luiMapCom(options, Option)}
