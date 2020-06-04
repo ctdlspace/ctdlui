@@ -41,11 +41,11 @@ export const luiMapCom = (list, Com) => {
 		)
 	})
 }
-
 export const luiObjAreEq = (o1, o2) => {
-	return JSON.stringify(o1) === JSON.stringify(o2)
+	const str1 = JSON.stringify(o1)
+	const str2 = JSON.stringify(o2)
+	return str1 === str2
 }
-
 /**
  * Send event using name taken from props
  * @param props
@@ -57,11 +57,9 @@ export const luiFireEvent = (props, event, value) => {
 		target: { name: props.name, value },
 	})
 }
-
 export const luiFireChange = (props, value) => {
 	luiFireEvent(props, 'onChange', value)
 }
-
 /**
  * Patch state
  * @param init
