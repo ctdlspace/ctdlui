@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.23](https://github.com/ctdlspace/ctdlui/compare/v0.0.22...v0.0.23) (2020-06-04)
+
+
+### Bug Fixes
+
+* **LuiInputMultiSelect:** not setting select name ([de25c86](https://github.com/ctdlspace/ctdlui/commit/de25c86ed4aae37f29244491af2af4fc87dae5a9))
+
 ### [0.0.22](https://github.com/ctdlspace/ctdlui/compare/v0.0.21...v0.0.22) (2020-06-04)
 
 
