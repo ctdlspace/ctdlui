@@ -33,7 +33,7 @@ import React, { useState, useEffect } from 'react'
 import './form.less'
 import { LuiButton } from '../button/button'
 import { LuiInputText } from '../inputText/inputText'
-import { luiEvent } from '../../helpers'
+import { luiFireEvent } from '../../helpers'
 
 /**
  * Form Settings
@@ -57,36 +57,31 @@ export const LuiFormSettings = {
  * @returns {*}
  */
 export const LuiForm = props => {
-
 	const {
-		onSubmit,
 		fields,
 		values,
 		buttons,
 	} = props
-
 	const defaultButtons = [{
 		type: LuiFormSettings.defaultButtonType,
 		text: 'Submit',
 	}]
-
 	const defaultFields = [{
 		name: 'title',
 		type: LuiFormSettings.defaultInputType,
 	}]
-
 	const initialValues = (fields || defaultFields).reduce(
-		(acc, field) => {
+		(acc, field, index) => {
+			if (!field.name) {
+				throw new Error(`LuiForm can't accept field "${field.type}:${index}" without name`)
+			}
 			acc[field.name] = (values || {})[field.name] || ''
 			return acc
-		}, {},
-	)
-
+		}, {})
 	const [
 		formValues,
 		setFormValues,
 	] = useState(initialValues)
-
 	const getFieldProps = () => {
 		return {
 			onChange(e) {
@@ -96,7 +91,7 @@ export const LuiForm = props => {
 					console.error(e.target)
 					throw Error('name not set')
 				}
-				console.debug('onChange', {name, value})
+				console.debug('onChange', { name, value })
 				setFormValues({
 						...formValues,
 						[name]: value,
@@ -105,61 +100,43 @@ export const LuiForm = props => {
 			},
 		}
 	}
-
 	const doOnSubmit = e => {
 		e.preventDefault()
 		console.debug('onSubmit', formValues)
-		luiEvent(props, 'onSubmit', formValues)
-		// onSubmit && props.onSubmit({
-		// 	sourceEvent: e,
-		// 	target: {
-		// 		value: formValues,
-		// 	},
-		// })
+		luiFireEvent(props, 'onSubmit', formValues)
 	}
-
 	useEffect(
 		() => {
 			setFormValues(initialValues)
 		},
 		Object.values(initialValues),
 	)
-
 	return (
 		<form onSubmit={doOnSubmit} className="luiForm">
 			{
 				(fields || defaultFields).map((field, key) => {
-
 					field.type || (
 						field.type = LuiFormSettings.defaultInputType
 					)
-
 					const typeProps = {
 						...field,
 					}
-
-					delete typeProps.type
-
 					typeProps.value = formValues[typeProps.name]
-
 					typeProps.label || (
 						typeProps.label = typeProps.name
 					)
-
 					typeProps.className || (
 						typeProps.className = ''
 					)
-
 					typeProps.required = typeProps.required !== false
-
+					delete typeProps.type
 					return (
 						<div className="luiFormInput" key={key}>
 							<div className="luiForm_field_title">{typeProps.label}</div>
 							<div className="luiForm_field_input">
 								<field.type
 									{...getFieldProps(typeProps.name)}
-									{...typeProps}
-								/>
+									{...typeProps}/>
 							</div>
 						</div>
 					)
@@ -172,8 +149,8 @@ export const LuiForm = props => {
 							const Com = button.type || LuiFormSettings.defaultButtonType
 							return (
 								<Com className="luiForm_button"
-										 type={button.type}
-										 key={key}>{button.text}</Com>
+									 type={button.type}
+									 key={key}>{button.text}</Com>
 							)
 						},
 					)
