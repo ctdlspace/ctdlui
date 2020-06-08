@@ -54,7 +54,9 @@ export const luiObjAreEq = (o1, o2) => {
  */
 export const luiFireEvent = (props, event, value) => {
 	props[event]?.({
-		target: { name: props.name, value },
+		target: props.name
+			? { name: props.name, value }
+			: { value },
 	})
 }
 export const luiFireChange = (props, value) => {
